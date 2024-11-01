@@ -32,3 +32,9 @@ Before beginning is important to:
 This section is dedicated on explaining how to allocate space for Ubuntu in the Disk.
 1. Access Disk Management:
     - Open Disk management 
+    - Right click on the Main Windows partition (typically C:) and select *Shrink Volume*
+    - Specify the amount of space to shrink, minimum 50 GB
+**Desired Output:** There is now unallocated space on the disk (Destined for the installation of Ubuntu)
+
+## Installing Ubuntu
+
