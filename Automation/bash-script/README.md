@@ -10,6 +10,7 @@
 ### Considerations
 - **Operative System** The following project was realized on Ubuntu, a popular Linux distribution. But it can be replicated also on Windows or macOS (as long as we make sure to install/already have Bash)
 - **Dependencies** `openssl` is also a *must have* for this project; if not already installed we can run:
+
     `sudo apt update && sudo apt install openssl`
 
 ## Overview
@@ -18,12 +19,12 @@ Allows users to customize the lenght of the password and includes both alphanume
 Core concept of this project are an understanding of basic bash-scripting skills, secure password generation techniques and automation concepts.
 
 ### Features
-- **Customizable lenght:** User can specify the number of characters for needed for the password.
+- **Customizable lenght:** User can specify the number of characters needed for the password.
 - **Secure and random:** `openssl` generates cryptographically secure strings.
 - **Special characters:** Includes uppercase, lowecase, numbers and special character for enhanced security.
 - **Automation:** Makes the password generation process quick and efficient.
 ### What is the script for?
-- creating random and secure password for personal and professional use, perhaps while asigning a user to anew employee.
+- creating random and secure password for personal and professional use, perhaps while asigning a user to a new employee.
 - Learning about bash scripting and automation.
 - Understanding secure random number generation with `openssl`.
 ### Areas of opportunity
