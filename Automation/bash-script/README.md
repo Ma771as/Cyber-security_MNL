@@ -1,4 +1,4 @@
-# New Project Starter
+# Password Generator Script
 ### Table of Content
 1. [Before starting](#considerations)
 2. [Project Overview](#overview)
@@ -9,52 +9,38 @@
 
 ### Considerations
 - **Operative System** The following project was realized on Ubuntu, a popular Linux distribution. But it can be replicated also on Windows or macOS (as long as we make sure to install/already have Bash)
-- **Dependencies** Only Bash is required. No additional tools need to be installed.
+- **Dependencies** `openssl` is also a *must have* for this project; if not already installed we can run:
+
+    `sudo apt update && sudo apt install openssl`
 
 ## Overview
-This is a simple bash script that bootstraps a new academic project by generating a clean and organized folder structure.
-It automatically creates the following directories:
-
-notes/ → for research notes
-sources/ → for references, data, or source material
-drafts/ → for early versions of documents
-final/ → for polished deliverables
-
-Additionally, the script generates a README.md with the project title and creation date, ensuring every project starts with a clear entry point.
+This is a simple bash script that generates secure password using `openssl`.
+Allows users to customize the lenght of the password and includes both alphanumeric and special characters.
+Core concept of this project are an understanding of basic bash-scripting skills, secure password generation techniques and automation concepts.
 
 ### Features
-- Automatic folder creation: Sets up notes/, sources/, drafts/, and final/ folders.
-- README initialization: Includes project name and creation date by default.
-- Error handling: Prevents execution if no project name is provided.
-- Lightweight: Runs with no external dependencies.
-
+- **Customizable lenght:** User can specify the number of characters needed for the password.
+- **Secure and random:** `openssl` generates cryptographically secure strings.
+- **Special characters:** Includes uppercase, lowecase, numbers and special character for enhanced security.
+- **Automation:** Makes the password generation process quick and efficient.
 ### What is the script for?
-- Starting academic projects (essays, research papers, group work) with a ready-to-use structure.
-- Keeping project files organized from the very beginning.
-- Avoiding repetitive manual setup for every new project.
-- Learning basic bash scripting and automation in the context of academic workflows.
-
+- creating random and secure password for personal and professional use, perhaps while asigning a user to a new employee.
+- Learning about bash scripting and automation.
+- Understanding secure random number generation with `openssl`.
 ### Areas of opportunity
-- Add a default .gitignore and auto-initialize a Git repository.
-- Support optional templates for LaTeX, Markdown, or Word documents.
-- Include automatic metadata (author, institution, course name).
-- Provide interactive prompts for customized directory structures.
-
+- save passwords to an encrypted file for easy retrieval.
+- Build a menu-driven interface for ease of use.
 ### Usage
-1. Clone or download this repository.
-2. Make the script executable:
- `chmod +x project-starter.sh`
-3. Run the script with your project name:
-`./project-starter.sh "My Research Project"`
-
-4. The following structure will be created:
-
-```
-My Research Project/
-├── drafts/
-├── final/
-├── notes/
-├── sources/
-└── README.md
-
-```
+1. Clone this repository or Download the script.
+2. Run the script using 
+    `./pwgenerator.sh`
+    or
+    `bash pwgenerator.sh`
+3. on the terminal you will be prompted for the lenght of the password. Use numbers not words:
+    Correct Use
+    `Please enter the required lenght:`
+    `10`
+    Inproper Use
+    `Please enter the required lenght:`
+    `ten`
+4. The output should be a string of of random text, mixing numbers, letters (lowecase and uppercase) and special characters.
