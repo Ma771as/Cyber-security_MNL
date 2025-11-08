@@ -1,0 +1,223 @@
+ <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>GC Gen AI Leader | PS </title>
+            <link rel="stylesheet" href="style.css">
+            <script src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>
+        </head>
+        <body>
+            <h1>Google Cloud Generative AI Leader Practice Set</h1>
+            
+            <!-- Upload button for .csv -->
+            <div id="upload-container">
+                <h3>Enter .csv file</h3>
+                <input type="file" id="csv-file-input" accept=".csv">
+            </div>
+
+            <!-- Progress bar from style.css -->
+            <div id="quiz-container" style="display: none;">
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div id="progress-text"></div>
+                <h3 id="question"></h3>
+                <!-- Q1 response options -->
+                 <ul id="answer-options">
+                        <li><input type="radio" name="answer" id="option1" value="a"><label for="option1"></label></li>
+                        <li><input type="radio" name="answer" id="option2" value="b"><label for="option2"></label></li>
+                        <li><input type="radio" name="answer" id="option3" value="c"><label for="option3"></label></li>
+                        <li><input type="radio" name="answer" id="option4" value="d"><label for="option4"></label></li>
+                 </ul>
+
+                 <button id="submit-btn">Submit</button>
+                 <button id="next-btn">NEXT</button> <!-- next button to navigate the questionaire-->
+                 <div id="feedback"></div>
+            </div>
+
+            <!-- JavaScript -->
+            <script>
+                // Quiz Array
+                let quizData = []
+            
+
+                // Getting the HTML elements trough references
+                const uploadContainer = document.getElementById('upload-container');
+                const fileInput = document.getElementById('csv-file-input');
+                const quizContainer = document.getElementById('quiz-container');
+                const questionEl = document.getElementById('question');
+                const option1Label = document.querySelector('label[for="option1"]');
+                const option2Label = document.querySelector('label[for="option2"]');
+                const option3Label = document.querySelector('label[for="option3"]');
+                const option4Label = document.querySelector('label[for="option4"]');
+
+                const submitBtn = document.getElementById('submit-btn');
+                const feedbackEl = document.getElementById('feedback');
+                const answerInputs = document.querySelectorAll('input[name="answer"]');
+                const nextBtn = document.getElementById('next-btn');
+
+                const progressBar = document.getElementById('progress-bar');
+                const progressText = document.getElementById('progress-text');
+
+                let currentQuestionIndex = 0; // Keeps track of which question we are on
+                let score = 0;
+
+                // event listener for file upload
+                fileInput.addEventListener('change' , (event) => {
+                    const file = event.target.files[0];
+                    if (!file) return;
+
+                    if (typeof Papa === 'undefined') {
+                        alert("Error: The Papa Parse library is not correctly loaded, please review the link.");
+                        return;
+                    }
+                // function to parse the csv text
+                    Papa.parse(file, {
+                        header: true,
+                        skipEmptyLines: true,
+                        complete: function(results) {
+                            processQuizData(results.data);
+                        }
+                    });
+                });
+
+
+                function processQuizData(data) {
+                    quizData = data.map(item => {
+                        if (!item.question || item.question.trim() === "") return null;
+                        return {
+                            question: item.question,
+                            a: item.a,
+                            b: item.b,
+                            c: item.c,
+                            d: item.d,
+                            correct: item.correct ? item.correct.trim().toLowerCase() : '',
+                            explainationA: item.explanationA,
+                            explainationB: item.explanationB,
+                            explainationC: item.explanationC,
+                            explainationD: item.explanationD
+                            };
+                    }).filter(q => q !== null);
+
+                    if (quizData.length > 0) {
+                        startQuiz();
+                    } else {
+                        alert("Parsing failed. Please ensure the CSV has a header row with 'question', 'a', 'b', 'c', 'd', 'correct', etc.");
+                    }
+                }
+                    
+
+                // function to start the quiz
+                function startQuiz() {
+                    uploadContainer.style.display = 'none';
+                    quizContainer.style.display = 'block';
+                    currentQuestionIndex = 0;
+                    score = 0;
+                    loadQuestion();
+                }
+
+                
+                function deselectAnswers() {
+                    answerInputs.forEach((input) => {
+                        input.checked = false;
+                    });
+                }
+
+                // function to take the data for one question and displays it on the page
+                function loadQuestion() {
+                    deselectAnswers();
+                    const currentQuestionData = quizData[currentQuestionIndex];
+
+                    const progressPercent = (currentQuestionIndex / quizData.length) * 100;
+                    progressBar.style.width = `${progressPercent}%`;
+                    progressText.innerText = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
+
+
+                    questionEl.innerText = currentQuestionData.question;
+                    option1Label.innerText = currentQuestionData.a;
+                    option2Label.innerText = currentQuestionData.b;
+                    option3Label.innerText = currentQuestionData.c;
+                    option4Label.innerText = currentQuestionData.d;
+
+                    submitBtn.disabled = false;
+                    nextBtn.disabled = true;
+                    feedbackEl.innerHTML = '';
+                }
+
+                // get selected answers
+                function getSelectedAnswer() {
+                    let selectedValue = undefined;
+                    // loop trough each radio button
+                    answerInputs.forEach((input) => {
+                        // if one is selected
+                        if (input.checked) {
+                            // get its value a, b, c or d
+                            selectedValue = input.value;
+                        }
+                    });
+                    return selectedValue;
+                }
+
+                // notice submission of the answer
+                submitBtn.addEventListener('click', () => {
+                    const userAnswer = getSelectedAnswer();
+                    const currentQuestionData = quizData[currentQuestionIndex];
+                    const correctAnswer = currentQuestionData.correct;
+
+                    // check if answer was selected
+                    if (userAnswer) {
+                        submitBtn.disabled = true;
+                        nextBtn.disabled = false;
+
+                        let userExplanation = '';
+                        if (userAnswer === 'a') userExplanation = currentQuestionData.explainationA;
+                        if (userAnswer === 'b') userExplanation = currentQuestionData.explainationB;
+                        if (userAnswer === 'c') userExplanation = currentQuestionData.explainationC;
+                        if (userAnswer === 'd') userExplanation = currentQuestionData.explainationD;
+
+                        // check if answer is correct
+                        if (userAnswer === correctAnswer) {
+                            score++;
+                            feedbackEl.style.color = 'green';
+                            feedbackEl.innerHTML = `<h3>Correct!</h3><p>${userExplanation}</p>`;
+                        } else {
+                            let correctExplanation = '';
+                            if (correctExplanation === 'a') correctExplanation = currentQuestionData.explainationA;
+                            if (correctExplanation === 'b') correctExplanation = currentQuestionData.explainationB;
+                            if (correctExplanation === 'c') correctExplanation = currentQuestionData.explainationC;
+                            if (correctExplanation === 'd') correctExplanation = currentQuestionData.explainationD;
+
+                            feedbackEl.style.color = 'red';
+                            feedbackEl.innerHTML = `<h3>Incorrect.</h3>
+                                                    <p>${userExplanation}</p>`;
+                        }
+
+                    } else {
+                        feedbackEl.style.color = 'orange';
+                        feedbackEl.innerText = "Please select an answer.";
+                    }
+                });
+
+                // Event listener for the next button
+                nextBtn.addEventListener('click', () => {
+
+                    // increment one in index number and check if there are questions left
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < quizData.length) {
+                        loadQuestion();
+                        feedbackEl.innerHTML = '';
+                    } else {
+                        //
+                        quizContainer.innerHTML = `<h2>You have completed the quiz!</h2>\n<h3>FINAL SCORE ${score}/${quizData.length}</h3>`;
+                    }
+
+                });
+            
+                // Load the 1st question when the page loads
+                loadQuestion();
+
+            </script>
+
+        </body>
+    </html>
