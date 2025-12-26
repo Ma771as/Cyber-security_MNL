@@ -1,14 +1,14 @@
 # IAB Hybrid Threat: Strategic Analysis 2026 (RTE) - ESP/ENG
 
 ### Table of Content
-1. [Executive Summary](#-executive-summary)
-2. [Methodology and Analytical Rigor](#-methodology-and-analytical-rigor)
-3. [TECHINT collection Tools](#-techint-collection-tools)
+1. [Executive Summary](#executive-summary)
+2. [Methodology and Analytical Rigor](#methodology-and-analytical-rigor)
+3. [TECHINT collection Tools](#techint-collection-tools)
     * [Python Engine (`fetch-iocs.py`)](#python-engine-fetch-iocspy)
     * [Automation Scripts (`.sh`)](#automation-scripts-sh)
-4. [Project Structure](#-project-structure)
+4. [Project Structure](#project-structure)
 5. [Usage](#usage)
-6. [Security considerations](#-security-considerations)
+6. [Security considerations](#security-considerations)
 
 ---
 
