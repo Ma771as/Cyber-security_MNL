@@ -1,0 +1,177 @@
+[
+  {
+    "filename":"202504_GH_CyberInt_IAB_001",
+    "admiralty_code":"C2",
+    "justification":"CyberInt = proveedor de inteligencia privado; reputación razonable, análisis basados en telemetría — información probable.",
+    "apparent_date":"2025-04-01",
+    "tags":"IABs"
+  },
+  {
+    "filename":"202208_GH_RecordedFuture_IAB-RansomwareAttacks",
+    "admiralty_code":"B2",
+    "justification":"Recorded Future = proveedor reputado de OSINT; fuente normalmente fiable, análisis mayormente probables.",
+    "apparent_date":"2022-08-01",
+    "tags":"IABs"
+  },
+  {
+    "filename":"202300_GH_NCA_Ransomware-extortion-and-the-cyber-crime-ecosystem",
+    "admiralty_code":"A2",
+    "justification":"NCA (National Crime Agency, UK) = organismo oficial con historial fiable; datos extensos pero análisis pueden incluir inferencias.",
+    "apparent_date":"2023-01-01",
+    "tags":"IABs"
+  },
+  {
+    "filename":"202411_GH_outpost24_ADVERSARIAL-IAB-and-links-to-ransomware",
+    "admiralty_code":"C2",
+    "justification":"Outpost24 = empresa de seguridad; buena reputación técnica, información probable.",
+    "apparent_date":"2024-11-01",
+    "tags":"IABs"
+  },
+  {
+    "filename":"202409_GH_ACSC_Information-Stealer-Malware-Advisory",
+    "admiralty_code":"A2",
+    "justification":"ACSC (Australia) = organismo gubernamental; fuente fiable, información de amenaza operativa muy creíble.",
+    "apparent_date":"2024-09-01",
+    "tags":"IABs"
+  },
+  {
+    "filename":"202510_GH_ENISA_ThreatLandscape2025_003",
+    "admiralty_code":"A2",
+    "justification":"ENISA = agencia de la UE; informe oficial y analítico; alta fiabilidad, normalmente “probable” \/ consolidado.",
+    "apparent_date":"2025-10-01",
+    "tags":"IABs;ENISA"
+  },
+  {
+    "filename":"202510_GH_ENISA_ThreatLandscape-2025",
+    "admiralty_code":"A2",
+    "justification":"ENISA — alta fiabilidad y credibilidad.",
+    "apparent_date":"2025-10-01",
+    "tags":"IABs;ENISA"
+  },
+  {
+    "filename":"202206_GH_Kaspersky_CrimewareReport.pdf",
+    "admiralty_code":"B2",
+    "justification":"Kaspersky = vendor con buena telemetría; fiable pero a veces interpretativo.",
+    "apparent_date":"2022-06-01",
+    "tags":"TTPS"
+  },
+  {
+    "filename":"201903_GH_MITRE_TTPsHunting.pdf",
+    "admiralty_code":"A1",
+    "justification":"MITRE = referencia técnica muy alta; materiales técnicos confirmables — información confirmada\/alta credibilidad.",
+    "apparent_date":"2019-03-01",
+    "tags":"TTPS"
+  },
+  {
+    "filename":"202105_GH_NCSC_Further-TTPs-associated-with-SVR-CyberActors",
+    "admiralty_code":"A2",
+    "justification":"NCSC (UK) = organismo oficial; análisis reputado; información muy fiable, usualmente probable\/confirmable en parte.",
+    "apparent_date":"2021-05-01",
+    "tags":"TTPS"
+  },
+  {
+    "filename":"202305_GH_proofpoint_ThreatReport-cybercrime-experimentation",
+    "admiralty_code":"B2",
+    "justification":"Proofpoint = proveedor reputado; telemetría sólida, análisis generalmente probables.",
+    "apparent_date":"2023-05-01",
+    "tags":"TTPS;IABs"
+  },
+  {
+    "filename":"202205_GH_HHS_Ransomware-trends-Q1",
+    "admiralty_code":"A2",
+    "justification":"HHS (EE. UU.) = organismo gubernamental; datos operativos y tendencias con buena credibilidad.",
+    "apparent_date":"2022-05-01",
+    "tags":"TTPS;IABs"
+  },
+  {
+    "filename":"202408_GH_INTERPOL_Asia-SouthPacific-Cyberthreat-Assessment-Report",
+    "admiralty_code":"A2",
+    "justification":"INTERPOL = organismo internacional; fuente muy fiable; análisis regional sólidos.",
+    "apparent_date":"2024-08-01",
+    "tags":"TTPS;IABs"
+  },
+  {
+    "filename":"202503_GH_CISA_StopRansomware-Medusa",
+    "admiralty_code":"A2",
+    "justification":"CISA (EE. UU.) = autoridad nacional para ciberseguridad; alta fiabilidad y credibilidad operativa.",
+    "apparent_date":"2025-03-01",
+    "tags":"TTPS;IABs"
+  },
+  {
+    "filename":"202208_GH_KELA_Ransomware-Victims-and-Network-Access-Sales-Q2",
+    "admiralty_code":"B2",
+    "justification":"KELA = empresa de inteligencia sobre mercado criminal; buena reputación, información basada en monitorización.",
+    "apparent_date":"2022-08-01",
+    "tags":"TTPS;IABs"
+  },
+  {
+    "filename":"202203_GH_CISA_RussianTTPs_002",
+    "admiralty_code":"A2",
+    "justification":"CISA — informe oficial sobre TTPs; fiable, aunque clasificación de atribución puede implicar análisis.",
+    "apparent_date":"2022-03-01",
+    "tags":"TTPs;Russian"
+  },
+  {
+    "filename":"202405_GH_NATO_Russian-InformationOPs",
+    "admiralty_code":"A2",
+    "justification":"Documento de NATO — fuente oficial\/alto nivel; información sólida y verificada en gran parte.",
+    "apparent_date":"2024-05-01",
+    "tags":"TTPs;Russian"
+  },
+  {
+    "filename":"202502_GH_ENISA_NIS360-2024_004",
+    "admiralty_code":"A2",
+    "justification":"ENISA (sector energético) — informe sectorial oficial; alta fiabilidad.",
+    "apparent_date":"2025-02-01",
+    "tags":"Energy Sector;Risk Assessment;ENISA"
+  },
+  {
+    "filename":"202505_GH_ENISA_CyberStressTestsHandbook_009",
+    "admiralty_code":"A2",
+    "justification":"ENISA — manual\/handbook oficial; referencia técnica fiable.",
+    "apparent_date":"2025-05-01",
+    "tags":"Energy Sector;Risk Assessment;ENISA"
+  },
+  {
+    "filename":"202305_GH_EU-NISCG_CybersecurityRisk_005",
+    "admiralty_code":"A2",
+    "justification":"EU NIS Cooperation Group = organismo oficial de la UE; alta fiabilidad.",
+    "apparent_date":"2023-05-01",
+    "tags":"Energy Sector;Risk Assessment;ENISA"
+  },
+  {
+    "filename":"201912_GH_EnergyCommunitySEC_BlueprintCyber_006",
+    "admiralty_code":"B2",
+    "justification":"Energy Community (regional) — documento institucional; generalmente fiable, pero región\/alcance limitado.",
+    "apparent_date":"2019-12-01",
+    "tags":"Energy Sector;Risk Assessment;ENISA"
+  },
+  {
+    "filename":"201906_GH_EnergyCommunitySEC_MKD-CIRT_007",
+    "admiralty_code":"B2",
+    "justification":"Similar al anterior: institución regional con buena fiabilidad pero alcance más local.",
+    "apparent_date":"2019-06-01",
+    "tags":"Energy Sector;Risk Assessment;ENISA"
+  },
+  {
+    "filename":"202200_GH_FCIT_SCADA-CloudChallenges_008",
+    "admiralty_code":"B2",
+    "justification":"FCIT (asumido como entidad técnica) — asignación prudente por nombre; fiabilidad moderada\/alta para temas SCADA.",
+    "apparent_date":"2022-01-01",
+    "tags":"SCADA;vulnerability;security audit"
+  },
+  {
+    "filename":"201903_GH_IEEEAccess_Comprehensive_Security_Analysis_of_SCADAProtocol",
+    "admiralty_code":"A2",
+    "justification":"IEEE Access = revista académica revisada; fuente fiable; datos técnicos comprobables.",
+    "apparent_date":"2019-03-01",
+    "tags":"SCADA;vulnerability;security audit"
+  },
+  {
+    "filename":"202407_GH_GovFed_NIS2",
+    "admiralty_code":"A2",
+    "justification":"Documento gubernamental\/federal sobre NIS2: organismo oficial, alta fiabilidad.",
+    "apparent_date":"2024-07-01",
+    "tags":"SCADA;vulnerability;security audit"
+  }
+]

@@ -1,0 +1,10 @@
+# Secretos de API agnostico a carpetas
+**/key.env
+**/.env
+
+# Archivos de datos generados
+**/*.csv
+**/collected_iocs_*.csv
+
+# Python
+**/__pycache__/
